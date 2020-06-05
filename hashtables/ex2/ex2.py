@@ -6,9 +6,13 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    # construct the lookup table
+    trip = {tick.source: tick.destination for tick in tickets}
 
-    return route
+    current_city = "NONE"
+    layovers = []
+    while len(layovers) == 0 or current_city != 'NONE':
+        layovers.append(trip[current_city])
+        current_city = trip[current_city]
+
+    return layovers
