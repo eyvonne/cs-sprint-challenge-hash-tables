@@ -3,7 +3,11 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     cache = {}
+    for a in arrays[0]:
+        if a in arrays[1]:
+            cache[a] = True
 
+    result = []
     return result
 
 
